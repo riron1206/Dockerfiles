@@ -5,14 +5,17 @@ docker-compose.ymlを使用して、Kaggle Kernelを構築
 - 参考:https://amalog.hateblo.jp/entry/data-analysis-docker
 
 ## 手順
-- docker-compose.ymlの「C:\xxxx\kaggle_kernel_jupyter」を<docker-compose.yml置いているディレクトリ>の絶対パスに変更する。これをしないとディレクトリがマウントされない。$PWD でいけるはずだがなぜかエラーになる
+- docker-compose.ymlの「C:\xxxx\kaggle_kernel_jupyter」を<docker-compose.yml置いているディレクトリ>の絶対パスに変更する
+-- これをしないとディレクトリがマウントされない。$PWD でいけるはずだがなぜかエラーになる
 - powershellで以下のコマンドを叩くとDockerfileのビルド（docker-compose.ymlをロードしてDockerfileでイメージ作成およびコンテナ起動。イメージ作成済みならコンテナ起動だけ）が走り、その後コンテナの中でJupyter Notebookが起動
 ```bash
 $ cd <docker-compose.yml置いているディレクトリ>
-$ docker-compose up --build # up でコンテナを作成して、起動。--buildをつけることで起動前にイメージも構築
+$ docker-compose up --build     # up でコンテナを作成して、起動。--buildをつけることで起動前にイメージも構築
+
 実行ログの「to login with a token:」の下のURLに表示されるtokenをつかって
 http://localhost:8888/?token==xxxxxxxxxxxxxx  をブラウザのURLバーに入れればJupyter Notebookにアクセスできる
-Ctrl + c でコンテナ停止
+
+$ Ctrl + c でコンテナ停止
 ```
 
 ### その他使いそうなdocker-composeのコマンド
