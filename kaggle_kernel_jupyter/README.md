@@ -17,7 +17,7 @@ http://localhost:8888/?token==xxxxxxxxxxxxxx  をブラウザのURLバーに入れればJupyt
 $ Ctrl + c でコンテナ停止
 ```
 
-### その他使いそうなdocker-composeのコマンド
+## その他使いそうなdocker-composeのコマンド
 ```bash
 $ docker-compose version        # docker-composeのバージョンを表示
 $ cd <docker-compose.yml置いているディレクトリ>
@@ -28,7 +28,7 @@ $ docker-compose restart        # docker-composeで起動中のコンテナを再起動
 $ docker-compose rm             # docker-composeで停止中のコンテナを削除
 ```
 
-### その他使いそうなdockerのコマンド
+## その他使いそうなdockerのコマンド
 ```bash
 $ docker images                 # dockerイメージの一覧確認
 $ docker rmi [IMAGE_ID]         # dockerイメージの削除
