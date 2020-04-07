@@ -13,7 +13,7 @@ Dockerfiles and docker-compose.yml sample command
 $ docker run -it -v $PWD/docker_share:/share --rm --name tensorflow tensorflow/tensorflow
 
 -it:ターミナルを使うためのオプション
--v $PWD/docker_share:/share : ホスト側とコンテナ側のディレクトリを共有するオプション。コマンド実行したディレクトリの下に docker_share というディレクトリが生成され、/shareディレクトリにファイルを入れると、ホスト側にも共有されます。
+-v $PWD/docker_share:/share : ホスト側とコンテナ側のディレクトリを共有するオプション。コマンド実行したディレクトリの下に docker_share というディレクトリが生成され、/shareディレクトリにファイルを入れると、ホスト側にも共有される
 --rm:コンテナから抜けるとコンテナを自動で削除する
 --name: コンテナの名前を指定
 ```
@@ -24,9 +24,8 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 -p:ポート指定。jupyter使う場合必ず必要
 
-→起動すると画面に token=xxxxxxxxxxxxxx という形でtokenが表示されるので、
-　http://localhost:8888 にアクセスして、ログイン画面でtoken貼り付ける
-→もしくは、http://localhost:8888/?token=xxxxxxxxxxxxxx とアドレスにtokenを打ち込めば、ログイン画面を省略して直接Jupyter Notebookにログインできる
+起動すると画面に token=xxxxxxxxxxxxxx という形でtokenが表示されるので、http://localhost:8888 にアクセスして、ログイン画面でtoken貼り付ける
+もしくは、http://localhost:8888/?token=xxxxxxxxxxxxxx とアドレスにtokenを打ち込めば、ログイン画面を省略して直接Jupyter Notebookにログインできる
 ```
 
 <!-- 
