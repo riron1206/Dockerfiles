@@ -28,6 +28,10 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 もしくは、http://localhost:8888/?token=xxxxxxxxxxxxxx とアドレスにtokenを打ち込めば、ログイン画面を省略して直接Jupyter Notebookにログインできる
 ```
 
+## [Dockerfileでdl4uの環境作成](/kaggle_kernel_jupyter)
+
+## [docker-compose.ymlでKaggle Kernel作成](/kaggle_kernel_jupyter)
+
 <!-- 
 ## License
 This software is released under the MIT License, see LICENSE.
