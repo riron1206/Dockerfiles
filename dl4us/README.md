@@ -1,7 +1,7 @@
 # Dockerfileでdl4uの環境作成
 - dl4us program of Tokyo Univ. Matsuo Lab: https://weblab.t.u-tokyo.ac.jp/dl4us/
 
-### Dockerfile（OS のコマンドを羅列したテキストファイル）からdl4u用のdockerイメージ作成してコンテナ起動
+### Dockerfile（OS のコマンドを羅列したテキストファイル）からdockerイメージ作成してコンテナ起動
 ```bash
 $ cd <Dockerfileの格納場所>
 $ docker build -t karaage0703/dl4us .                            # Dockerfileからイメージ作成。karaage0703/dl4usがdockerイメージ名になる
