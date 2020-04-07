@@ -5,7 +5,7 @@ Dockerfiles and docker-compose.yml sample command
 - 参考: https://qiita.com/ksh-fthr/items/6b1242c010fac7395a45
 
 ## dockerコンテナ作成例
-- 必ずPowerShellから実行すること
+- dockerコマンドは必ずPowerShellから実行すること
 - 参考: https://karaage.hatenadiary.jp/entry/2019/05/17/073000
 
 ### TensorFlowのイメージをDocker Hubからダウンロードしてコンテナ立ち上げ
