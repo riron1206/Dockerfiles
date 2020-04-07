@@ -1,7 +1,7 @@
 # Dockerfile‚Ådl4u‚ÌŠÂ‹«ì¬
 - dl4us program of Tokyo Univ. Matsuo Lab: https://weblab.t.u-tokyo.ac.jp/dl4us/
 
-### DockerfileiOS ‚ÌƒRƒ}ƒ“ƒh‚ğ—…—ñ‚µ‚½ƒeƒLƒXƒgƒtƒ@ƒCƒ‹j‚©‚çdockerƒCƒ[ƒWì¬
+### DockerfileiOS ‚ÌƒRƒ}ƒ“ƒh‚ğ—…—ñ‚µ‚½ƒeƒLƒXƒgƒtƒ@ƒCƒ‹j‚©‚çdl4u—p‚ÌdockerƒCƒ[ƒWì¬‚µ‚ÄƒRƒ“ƒeƒi‹N“®
 ```bash
 $ cd <Dockerfile‚ÌŠi”[êŠ>
 $ docker build -t karaage0703/dl4us .                            # Dockerfile‚©‚çƒCƒ[ƒWì¬Bkaraage0703/dl4us‚ªdockerƒCƒ[ƒW–¼‚É‚È‚é
@@ -11,7 +11,7 @@ $ docker run -p 8888:8888 -it --rm karaage0703/dl4us /bin/bash   # ƒCƒ[ƒW‚©‚çƒ
 -it:ƒ^[ƒ~ƒiƒ‹‚ğg‚¤‚½‚ß‚ÌƒIƒvƒVƒ‡ƒ“
 --rm:ƒRƒ“ƒeƒi‚©‚ç”²‚¯‚é‚ÆƒRƒ“ƒeƒi‚ğ©“®‚Åíœ‚·‚é
 
-$ exit or Ctrl + D                                             # ƒRƒ“ƒeƒi‚ÌI—¹
+$ exit or Ctrl + D                                               # ƒRƒ“ƒeƒi‚ÌI—¹
 ```
 
 <!-- 
