@@ -1,5 +1,5 @@
 # Dockerfileでdl4uの環境作成
-- dl4us program of Tokyo Univ. Matsuo Lab.: https://weblab.t.u-tokyo.ac.jp/dl4us/
+- dl4us program of Tokyo Univ. Matsuo Lab: https://weblab.t.u-tokyo.ac.jp/dl4us/
 
 ### Dockerfile（OS のコマンドを羅列したテキストファイル）からdockerイメージ作成
 ```bash
