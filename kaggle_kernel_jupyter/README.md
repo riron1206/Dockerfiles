@@ -1,6 +1,8 @@
 # docker-compose.ymlでKaggle Kernel作成
-- gcr.io/kaggle-images/python と kaggle_kernel_jupyter のイメージを作成して、kaggle_kernel_jupyterのコンテナを起動
--- docker-composeではイメージ名とコンテナ名を自動で生成される
+- gcr.io/kaggle-images/python と kaggle_kernel_jupyter のイメージを作成して、kaggle_kernel_jupyterのコンテナを起動する
+- docker-compose: Dockerfileのビルドと起動を管理するツール
+	- docker-composeを使えば、様々なオプションをdocker-compose.ymlというYAMLファイルで設定することができる
+	- docker-composeではイメージ名とコンテナ名を自動で生成される
 - 参考: https://amalog.hateblo.jp/entry/data-analysis-docker
 
 ## 手順
