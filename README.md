@@ -1,14 +1,14 @@
 # Dockerfiles
-Dockerfiles and docker-compose.yml
+Dockerfiles and docker-compose.yml sample command
 
 ## Docker setup (Windows10)
 - 参考: https://qiita.com/ksh-fthr/items/6b1242c010fac7395a45
 
-## create docker container sample command
-- ※必ずPowerShellから実行すること
+## dockerコンテナ作成例
+- 必ずPowerShellから実行すること
 - 参考: https://karaage.hatenadiary.jp/entry/2019/05/17/073000
 
-### TensorFlowのDocker Hubイメージでコンテナ立ち上げ
+### TensorFlowのイメージをDocker Hubからダウンロードしてコンテナ立ち上げ
 ```bash
 $ docker run -it -v $PWD/docker_share:/share --rm --name tensorflow tensorflow/tensorflow
 
@@ -18,7 +18,7 @@ $ docker run -it -v $PWD/docker_share:/share --rm --name tensorflow tensorflow/t
 --name: コンテナの名前を指定
 ```
 
-### Jupyter Notebookが入ったDocker Hubイメージでコンテナ立ち上げ
+### Jupyter Notebookが入ったDocker Hubのイメージからコンテナ立ち上げ
 ```bash
 $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 

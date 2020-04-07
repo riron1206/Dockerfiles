@@ -1,12 +1,12 @@
-# dl4u
+# dl4u環境用Dockerfile
 Docker image for dl4us program of Tokyo Univ. Matsuo Lab.
 - 参考: https://weblab.t.u-tokyo.ac.jp/dl4us/
 
 ### Dockerfile（OS のコマンドを羅列したテキストファイル）からdockerイメージ作成
 ```bash
 $ cd <Dockerfileの格納場所>
-$ docker build -t karaage0703/dl4us .                          # Dockerfileからイメージ作成。karaage0703/dl4usがdockerイメージ名になる
-$ docker run -p 8888:8888 -it --rm karaage0703/dl4us /bin/bash # イメージからコンテナを作成し、コンテナ起動してbashで操作
+$ docker build -t karaage0703/dl4us .                            # Dockerfileからイメージ作成。karaage0703/dl4usがdockerイメージ名になる
+$ docker run -p 8888:8888 -it --rm karaage0703/dl4us /bin/bash   # イメージからコンテナを作成し、コンテナ起動してbashで操作
 
 -p:ポート指定。jupyter使う場合必ず必要
 -it:ターミナルを使うためのオプション
