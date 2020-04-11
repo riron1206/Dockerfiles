@@ -5,7 +5,7 @@
 ```bash
 $ cd <Dockerfileの格納場所>
 $ docker build -t mlflow-docker-example -f Dockerfile . # Dockerfileからイメージ作成。mlflow-docker-exampleがdockerイメージ名になる
-$ docker run -p 5000:5000 -it -v $PWD/jupyter_notebook:jupyter_notebook--rm mlflow-docker-example /bin/bash   # イメージからコンテナを作成し、コンテナ起動してbashで操作
+$ docker run -p 5000:5000 -it -v $PWD/jupyter_notebook:jupyter_notebook --rm mlflow-docker-example /bin/bash   # イメージからコンテナを作成し、コンテナ起動してbashで操作
 
 -p:ポート指定。ポート指定しないとmlflow ui使えない
 -it:ターミナルを使うためのオプション
