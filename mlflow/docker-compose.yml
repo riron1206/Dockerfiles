@@ -1,0 +1,9 @@
+version: '3'
+services:
+  mlflow:
+    build: .
+    container_name: mlflow
+
+volumes:
+  C:\Users\shingo\jupyter_notebook\Dockerfiles:
+  
