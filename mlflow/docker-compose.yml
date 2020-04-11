@@ -1,0 +1,11 @@
+version: "3"
+services:
+  mlflow:
+    build: .
+    # volumesとworking_dirを変更する必要がある。マウントする直下にmlrunsのディレクトリないと機能しない
+    volumes:
+      - C:\Users\shingo\jupyter_notebook:/jupyter_notebook
+    working_dir: /jupyter_notebook
+    ports:
+      - 5000:5000
+    command: mlflow ui --port 5000 --host 0.0.0.0
