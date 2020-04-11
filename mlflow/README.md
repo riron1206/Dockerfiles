@@ -19,6 +19,10 @@ $ mlflow ui --port 5000 --host 0.0.0.0  # Dockerでは--host 0.0.0.0が必要。docker
 $ Ctrl + c でコンテナ停止
 ```
 
+### etc
+- $ docker-compose up --build でdocker-compose.ymlから実行する場合はvolumesとworking_dirを変更する必要がある
+- Dockerからではartifactで設定したファイルはmlflow uiでは表示できない。meta.yamlのartifact_locationが絶対パスであるため
+
 <!-- 
 ## License
 This software is released under the MIT License, see LICENSE.
