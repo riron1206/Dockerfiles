@@ -21,7 +21,7 @@ $ Ctrl + c でコンテナ停止
 
 ### etc
 - $ docker-compose up --build でdocker-compose.ymlから実行する場合はvolumesとworking_dirを変更する必要がある
-- Dockerからではartifactで設定したファイルはmlflow uiでは表示できない。meta.yamlのartifact_locationが絶対パスであるため
+- Dockerから起動したmlflow uiはartifactに設定したファイルを表示できない。これはmeta.yamlのartifact_locationが絶対パスであるため
 
 <!-- 
 ## License
