@@ -34,6 +34,27 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 ## [Dockerfileでmlflowの環境作成](/mlflow)
 
+## よく使うdockerコマンド
+```bash
+$ docker images                         # dockerイメージの一覧確認
+$ docker rmi [IMAGE_ID]                 # dockerイメージの削除
+$ docker ps                             # 起動中のdockerコンテナの一覧を表示。全てのコンテナ確認する場合は-aつける
+$ docker exec -it [CONTAINER_ID] bash   # 起動中のdockerコンテナをbashで操作する
+$ docker stop [CONTAINER_ID]            # 起動中のdockerコンテナの停止
+$ docker rm [CONTAINER_ID]              # 起動中のdockerコンテナの削除 ※あらかじめ停止しておくこと
+```
+
+## よく使うdocker-composeのコマンド
+```bash
+$ docker-compose version        # docker-composeのバージョンを表示
+$ cd <docker-compose.yml置いているディレクトリ>
+$ docker-compose ps             # docker-composeで起動したコンテナの一覧を表示
+$ docker-compose up             # docker-composeでイメージからコンテナを起動。-dつけてバックグラウンドで実行するとjupyterのtoken表示されないので-dはつけないこと
+$ docker-compose kill           # docker-composeで起動中のコンテナを強制停止
+$ docker-compose restart        # docker-composeで起動中のコンテナを再起動
+$ docker-compose rm             # docker-composeで停止中のコンテナを削除
+```
+
 <!-- 
 ## License
 This software is released under the MIT License, see LICENSE.

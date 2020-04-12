@@ -19,26 +19,6 @@ http://localhost:8888/?token==xxxxxxxxxxxxxx  をブラウザのURLバーに入れればJupyt
 $ Ctrl + c でコンテナ停止
 ```
 
-## その他使いそうなdocker-composeのコマンド
-```bash
-$ docker-compose version        # docker-composeのバージョンを表示
-$ cd <docker-compose.yml置いているディレクトリ>
-$ docker-compose ps             # docker-composeで起動したコンテナの一覧を表示
-$ docker-compose up             # docker-composeでイメージからコンテナを起動。-dつけてバックグラウンドで実行するとjupyterのtoken表示されないので-dはつけないこと
-$ docker-compose kill           # docker-composeで起動中のコンテナを強制停止
-$ docker-compose restart        # docker-composeで起動中のコンテナを再起動
-$ docker-compose rm             # docker-composeで停止中のコンテナを削除
-```
-
-## その他使いそうなdockerのコマンド
-```bash
-$ docker images                 # dockerイメージの一覧確認
-$ docker rmi [IMAGE_ID]         # dockerイメージの削除
-$ docker ps                     # 起動中のdockerコンテナの一覧を表示。全てのコンテナ確認する場合は-aつける
-$ docker stop [CONTAINER_ID]    # 起動中のdockerコンテナの停止
-$ docker rm [CONTAINER_ID]      # 起動中のdockerコンテナの削除 ※あらかじめ停止しておくこと
-```
-
 <!-- 
 ## License
 This software is released under the MIT License, see LICENSE.
