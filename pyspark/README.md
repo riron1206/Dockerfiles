@@ -3,8 +3,8 @@
 
 ### DockerHubからdockerイメージコピーしてコンテナ起動。powershellで実行
 ```bash
-$ docker pull jupyter/pyspark-notebook:87210526f381 # Jupyter Lab が公開している jupyter/pyspark-notebook
-$ docker run --rm -w /app -p 8888:8888 --mount type=bind,src=$(pwd),dst=/app jupyter/pyspark-notebook:87210526f381 # コンテナ起動
+$ docker pull jupyter/pyspark-notebook:87210526f381  # Jupyter Lab が公開している jupyter/pyspark-notebook
+$ docker run --rm -w /app -p 8888:8888 --mount type=bind,src=$(pwd),dst=/app jupyter/pyspark-notebook:87210526f381  # コンテナ起動
 
 --rm:コンテナから抜けるとコンテナを自動で削除する
 -w:作業ディレクトリ
