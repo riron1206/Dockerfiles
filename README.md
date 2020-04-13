@@ -30,11 +30,13 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 ## [Dockerfileでdl4uの環境作成](/dl4us)
 
-## [docker-compose.ymlでKaggle Kernel作成](/kaggle_kernel_jupyter)
+## [Dockerfileでjupyterlab環境作成](/jupyterlab)
 
 ## [Dockerfileでmlflow環境作成](/mlflow)
 
 ## [DockerHubからpyspark環境作成](/pyspark)
+
+## [docker-compose.ymlでKaggle Kernel作成](/kaggle_kernel_jupyter)
 
 ## よく使うdockerコマンド
 ```bash
