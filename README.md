@@ -44,6 +44,8 @@ $ docker ps                             # 起動中のdockerコンテナの一覧を表示。全
 $ docker exec -it [CONTAINER_ID] bash   # 起動中のdockerコンテナをbashで操作する
 $ docker stop [CONTAINER_ID]            # 起動中のdockerコンテナの停止
 $ docker rm [CONTAINER_ID]              # 起動中のdockerコンテナの削除 ※あらかじめ停止しておくこと
+$ docker rm $(docker ps -a -q)          # 起動中の全てのコンテナの削除 ※あらかじめ停止しておくこと
+
 ```
 
 ## よく使うdocker-composeのコマンド
