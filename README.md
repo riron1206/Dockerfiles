@@ -36,6 +36,8 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 ## [DockerHubからpyspark環境作成](/pyspark)
 
+## [DockerHubからpycaret環境作成](/pycaret)
+
 ## [docker-compose.ymlでKaggle Kernel作成](/kaggle_kernel_jupyter)
 
 ## よく使うdockerコマンド
@@ -45,8 +47,8 @@ $ docker rmi [IMAGE_ID]                 # dockerイメージの削除
 $ docker ps                             # 起動中のdockerコンテナの一覧を表示。全てのコンテナ確認する場合は-aつける
 $ docker exec -it [CONTAINER_ID] bash   # 起動中のdockerコンテナをbashで操作する
 $ docker stop [CONTAINER_ID]            # 起動中のdockerコンテナの停止
-$ docker rm [CONTAINER_ID]              # 起動中のdockerコンテナの削除 ※あらかじめ停止しておくこと
-$ docker rm $(docker ps -a -q)          # 起動中の全てのコンテナの削除 ※あらかじめ停止しておくこと
+$ docker rm [CONTAINER_ID]              # 起動中のdockerコンテナの削除 ※docker stop [CONTAINER_ID]でコンテナ停止しておくこと
+$ docker rm $(docker ps -a -q)          # 起動中の全てのコンテナの削除 ※docker stop $(docker ps -a -q)で全コンテナ停止しておくこと
 
 ```
 

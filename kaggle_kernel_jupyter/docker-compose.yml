@@ -3,7 +3,7 @@ services:
   jupyter:
     build: .
     volumes:
-      - C:\Users\shingo\jupyter_notebook\Dockerfiles\kaggle_kernel_jupyter:/tmp/working
+      - C:\Users\shingo:/tmp/working
     working_dir: /tmp/working
     ports:
       - 8888:8888
