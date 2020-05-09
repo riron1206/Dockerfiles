@@ -18,7 +18,7 @@ $ jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''  # jupyter lab起動
 
 →http://localhost:8888/をブラウザのURLバーに入れればJupyterLabにアクセスできる
 
-$ Ctrl + c でコンテナ停止
+$ exit でコンテナ停止
 ```
 
 <!-- 
