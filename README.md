@@ -38,6 +38,8 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 ## [DockerHubからpycaret環境作成](/pycaret)
 
+## [docker-compose.ymlでMeCab環境作成](/mecab)
+
 ## [docker-compose.ymlでKaggle Kernel作成](/kaggle_kernel_jupyter)
 
 ## よく使うdockerコマンド
