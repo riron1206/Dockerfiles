@@ -20,7 +20,7 @@ Dockerfiles and docker-compose.yml sample command
 
 ### TensorFlowのイメージをDocker Hubからダウンロードしてコンテナ立ち上げ
 ```bash
-$ docker run -it -v $PWD/docker_share:/share --rm --name tensorflow tensorflow/tensorflow
+$ docker run -it -v $PWD/../..:/jupyter_notebook --rm --name tensorflow tensorflow/tensorflow
 
 -it:ターミナルを使うためのオプション
 -v $PWD/docker_share:/share : ホスト側とコンテナ側のディレクトリを共有するオプション。コマンド実行したディレクトリの下に docker_share というディレクトリが生成され、/shareディレクトリにファイルを入れると、ホスト側にも共有される
