@@ -3,8 +3,12 @@ services:
   jupyter:
     build: .
     volumes:
-      - C:\Users\shingo:/tmp/working
-    working_dir: /tmp/working
+      - $PWD/../../..:/81908
+    working_dir: /81908
     ports:
       - 8888:8888
-    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
+    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser --NotebookApp.token='' --port=8888
+    deploy:
+      resources:
+        limits:
+          memory: 8g

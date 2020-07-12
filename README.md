@@ -8,6 +8,16 @@ Dockerfiles and docker-compose.yml sample command
 - dockerコマンドは必ずPowerShellから実行すること
 - 参考: https://karaage.hatenadiary.jp/entry/2019/05/17/073000
 
+## Docker Toolboxからインストールする場合（Windows 10 Pro じゃないとDocker for Windows使えないのでHome版だとこっち）
+- 参考: https://qiita.com/KIYS/items/8ac37f6757a6b7f84569
+	- VirturalBoxのメモリ8Gに変更すること
+		- 参考: https://qiita.com/niisan-tokyo/items/2d7d21aeb4e25f7a7bbe
+	- VirturalBoxのport=8888開けること
+		- 参考: https://qiita.com/daijinload/items/85f6e84926f41812ed70
+	- VirtualBox 仮想ディスクのサイズを変更すること
+		- disk.vmdkをdisk.vdiに変更参考: https://qiita.com/satoysan/items/1a8ec50fa9eef295ba58
+		- パーティション変更参考http://kabatin.hateblo.jp/entry/2016/02/25/190846
+
 ### TensorFlowのイメージをDocker Hubからダウンロードしてコンテナ立ち上げ
 ```bash
 $ docker run -it -v $PWD/docker_share:/share --rm --name tensorflow tensorflow/tensorflow
