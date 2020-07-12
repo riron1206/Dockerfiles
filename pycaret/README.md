@@ -10,7 +10,7 @@
 ```bash
 $ cd ../../Users/81908/jupyter_notebook/Dockerfiles/pycaret  # <Dockerfileの格納場所>
 $ docker build -t anarinsk/pycaret_jupyterlab:1.0.0 -f Dockerfile .
-$ docker run -p 8888:8888 -it -m 8g -v $PWD/notebook:/notebook --rm --entrypoint /bin/bash --name pycaret_jupyterlab anarinsk/pycaret_jupyterlab:1.0.0 # コンテナ起動してbashで入る
+$ docker run -p 8888:8888 -it -m 8g -v $PWD:/pycaret --rm --entrypoint /bin/bash --name pycaret_jupyterlab anarinsk/pycaret_jupyterlab:1.0.0 # コンテナ起動してbashで入る
 $ jupyter notebook --ip=0.0.0.0 --allow-root --NotebookApp.token=''  # jupyter notebook起動
 $ jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''  # jupyter lab起動
 
