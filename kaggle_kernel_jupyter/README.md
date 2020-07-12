@@ -10,7 +10,7 @@
 	- 参考: https://qiita.com/daijinload/items/85f6e84926f41812ed70
 - VirtualBox 仮想ディスクのサイズを変更すること
 	- disk.vmdkをdisk.vdiに変更参考: https://qiita.com/satoysan/items/1a8ec50fa9eef295ba58
-	- パーティション変更参考http://kabatin.hateblo.jp/entry/2016/02/25/190846
+	- パーティション変更参考: http://kabatin.hateblo.jp/entry/2016/02/25/190846
 
 ## 手順
 - Docker Quickstart Terminalで以下のコマンドを叩くとDockerfileのビルド（docker-compose.ymlをロードしてDockerfileでイメージ作成およびコンテナ起動。イメージ作成済みならコンテナ起動だけ）が走り、その後コンテナの中でJupyter Notebookが起動
