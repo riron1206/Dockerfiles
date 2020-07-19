@@ -5,12 +5,13 @@
 	- 参考: https://qiita.com/niisan-tokyo/items/2d7d21aeb4e25f7a7bbe
 - VirturalBoxのport=8888開けること
 	- 参考: https://qiita.com/daijinload/items/85f6e84926f41812ed70
+- gitがエラーにならないようにDockerfileにRUN apt update -y … を入れてる
 
 ### Dockerfile（OS のコマンドを羅列したテキストファイル）からdockerイメージ作成してコンテナ起動。Docker Quickstart Terminalで実行
 ```bash
 $ cd ../../Users/81908/jupyter_notebook/Dockerfiles/pycaret  # <Dockerfileの格納場所>
 $ docker build -t anarinsk/pycaret_jupyterlab:1.0.0 -f Dockerfile .
-$ docker run -p 8888:8888 -it -m 8g -v $PWD:/pycaret --rm --entrypoint /bin/bash --name pycaret_jupyterlab anarinsk/pycaret_jupyterlab:1.0.0 # コンテナ起動してbashで入る
+$ docker run -p 8888:8888 -it -m 8g -v $PWD/../../..:/81908 --rm --entrypoint /bin/bash --name pycaret_jupyterlab anarinsk/pycaret_jupyterlab:1.0.0 # コンテナ起動してbashで入る
 $ jupyter notebook --ip=0.0.0.0 --allow-root --NotebookApp.token=''  # jupyter notebook起動
 $ jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''  # jupyter lab起動
 
