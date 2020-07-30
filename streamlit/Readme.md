@@ -14,7 +14,7 @@
 </p>
 
 ## Docker imageはDocker Hubのをつかう: 
-Pull
+Pull:
 `docker pull tomerlevi/streamlit-docker`
 
 *Page: https://cloud.docker.com/u/tomerlevi/repository/docker/tomerlevi/streamlit-docker
@@ -27,7 +27,7 @@ $ cd ../../Users/81908/jupyter_notebook/Dockerfiles/streamlit/
 $ docker build -t tomerlevi/streamlit-docker -f Dockerfile .  # Docker image作成する
 ```
 
-## streamlit scrip tのサンプル実行
+## streamlit script のサンプル実行
 - アプリは http://localhost:8501 からいじれる
 - $ Ctrl + c でコンテナ停止
 ```bash
