@@ -1,5 +1,5 @@
 """
-日本のコロナの感染者数を可視化するサンプルコード
+日本のコロナ感染者数を可視化するサンプルコード
 https://docs.streamlit.io/en/stable/api.html#display-data の公式ドキュメント見ながらつくった
 """
 import streamlit as st
