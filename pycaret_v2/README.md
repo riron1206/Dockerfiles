@@ -21,6 +21,7 @@ $ docker build -t pycaret:2.0.0 -f Dockerfile .
 $ cd ../../Users/81908/jupyter_notebook/Dockerfiles/pycaret_v2
 $ docker run -p 8888:8888 -it -m 8g -v $PWD/../../..:/app --rm --entrypoint /bin/bash --name pycaret_v2 pycaret:2.0.0  # コンテナ起動してbashで入る
 $ jupyter notebook --ip=0.0.0.0 --allow-root --NotebookApp.token=''  # jupyter notebook起動
+
 -p:ポート指定。jupyter使う場合必ず必要
 -it:ターミナルを使うためのオプション
 -m:メモリ指定
