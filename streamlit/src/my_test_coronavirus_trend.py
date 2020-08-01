@@ -2,14 +2,22 @@
 日本のコロナ感染者数を可視化するサンプルコード
 https://docs.streamlit.io/en/stable/api.html#display-data の公式ドキュメント見ながらつくった
 """
+import io
+import datetime
 import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-sns.set()
+# streamlitの警告を非表示にする
+st.set_option("deprecation.showfileUploaderEncoding", False)
+
+# sns.set()
 # plt.rcParams["font.family"] = "Yu Gothic"  # Yu Gothic指定すれば日本語出せるはずだができず
+pd.options.plotting.backend = (
+    "plotly"  # pandasのグラフをplotlyで表示（pandas>0.25以上、plotly>4.5以上）
+)
 
 st.title("Coronavirus Trends in Japan")
 st.text(
@@ -122,46 +130,99 @@ class Cross:
         return df_cross.rolling(7).mean()
 
 
+def sidebar():
+    """
+    サイドバーの項目
+    - ボタンとかのウィジェットはst.sidebar でサイドバーに追加できる
+    """
+    # セレクトボックス（可視化する項目選ぶ）
+    selectbox_item = st.sidebar.selectbox(
+        "Select item", ("Age", "Region", "Gender", "Dayofweek"),
+    )
+
+    # レンジスライダー（可視化する期間指定）
+    slider_date = st.sidebar.slider(
+        "Select date",
+        value=(datetime.date(2020, 2, 1), datetime.date.today()),
+        format="MM/DD/YY - hh:mm",
+    )
+
+    # 複数行テキスト入力ウィジェット
+    text_area_titile = st.sidebar.text_area("Input title", "")
+
+    # csvファイルアップロード（csvをただ表示するだけ）
+    uploaded_file = st.sidebar.file_uploader("Choose a CSV file", type="csv")
+    if uploaded_file is not None:
+        data = pd.read_csv(uploaded_file)
+        st.subheader("uploaded csv")
+        st.write(data)  # テーブルはmain部分に表示される
+
+    # ボタン
+    if st.sidebar.button("Show balloons!!!"):
+        st.balloons()  # 風船表示しとく（ムダ機能）
+
+    return selectbox_item, slider_date, text_area_titile
+
+
+def main(data, selectbox_item, text_area_titile):
+    """メイン部分の項目"""
+    st.subheader(f"{text_area_titile}")
+
+    st.subheader("Number of people infected by day")
+
+    if selectbox_item == "Age":
+        # 患者_年代
+        df_cross = Cross().age_cross_data(data)
+        if st.checkbox("Show age cross-tabulation"):
+            st.subheader("Age cross-tabulation")
+            st.write(df_cross)
+        fig = df_cross.plot()
+        st.write(fig)  # plotlyで書くためにfigを渡している
+        # matplotlibのグラフで可視化したい場合は以下の記法
+        # df_cross.plot(figsize=(10, 8))
+        # st.pyplot()
+
+    elif selectbox_item == "Region":
+        # 患者_居住地
+        df_cross = Cross().region_cross_data(data)
+        if st.checkbox("Show region cross-tabulation"):
+            st.subheader("Region cross-tabulation")
+            st.write(df_cross)
+        fig = df_cross.plot()
+        st.write(fig)
+
+    elif selectbox_item == "Dayofweek":
+        # 曜日
+        df_cross = Cross().dayofweek_cross_data(data)
+        if st.checkbox("Show dayofweek cross-tabulation"):
+            st.subheader("Dayofweek cross-tabulation")
+            st.write(df_cross)
+        fig = df_cross.plot()
+        st.write(fig)
+
+    elif selectbox_item == "Gender":
+        # 患者_性別
+        df_cross = Cross().gender_cross_data(data)
+        df_cross.index.names = ["Date"]
+        if st.checkbox("Show gender cross-tabulation"):
+            st.subheader("Gender cross-tabulation")
+            st.write(df_cross)
+        fig = df_cross.plot()
+        st.write(fig)
+
+
 if __name__ == "__main__":
-    # 生データ
+    # 生データロードして表示
     data_load_state = st.text("Loading data...")
     data = load_data()
     data_load_state.text("Loading data...done!")
     if st.checkbox("Show raw data"):
         st.subheader("Raw data")
         st.write(data)
-
-    st.subheader("Number of people infected by day")
-
-    # 患者_年代
-    df_cross = Cross().age_cross_data(data)
-    if st.checkbox("Show age cross-tabulation"):
-        st.subheader("Age cross-tabulation")
-        st.write(df_cross)
-    df_cross.plot(figsize=(10, 8))
-    st.pyplot()
-
-    # 患者_居住地
-    df_cross = Cross().region_cross_data(data)
-    if st.checkbox("Show region cross-tabulation"):
-        st.subheader("Region cross-tabulation")
-        st.write(df_cross)
-    df_cross.plot(figsize=(10, 8))
-    st.pyplot()
-
-    # 曜日
-    df_cross = Cross().dayofweek_cross_data(data)
-    if st.checkbox("Show dayofweek cross-tabulation"):
-        st.subheader("Dayofweek cross-tabulation")
-        st.write(df_cross)
-    df_cross.plot(figsize=(10, 8))
-    st.pyplot()
-
-    # 患者_性別
-    df_cross = Cross().gender_cross_data(data)
-    df_cross.index.names = ["Date"]
-    if st.checkbox("Show gender cross-tabulation"):
-        st.subheader("Gender cross-tabulation")
-        st.write(df_cross)
-    df_cross.plot(figsize=(10, 8))
-    st.pyplot()
+        # st.dataframe(data.style.highlight_max(axis=0))  # 列の最大値色付ける。数値列じゃない列あるからエラー？
+    # サイドバー関連
+    selectbox_item, slider_date, text_area_titile = sidebar()
+    # 期間指定
+    data = data.query(f'"{slider_date[0]}" <= index <= "{slider_date[1]}"')
+    # メイン領域関連
+    main(data, selectbox_item, text_area_titile)
