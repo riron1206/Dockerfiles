@@ -16,7 +16,7 @@
 $ cd ../../Users/81908/jupyter_notebook/Dockerfiles/pycaret_v2  # <Dockerfileの格納場所>
 $ docker build -t pycaret:2.0.0 -f Dockerfile .
 ```
-### コンテナ起動
+### Dockerコンテナ起動
 ```bash
 $ cd ../../Users/81908/jupyter_notebook/Dockerfiles/pycaret_v2
 $ docker run -p 8888:8888 -it -m 8g -v $PWD/../../..:/app --rm --entrypoint /bin/bash --name pycaret_v2 pycaret:2.0.0  # コンテナ起動してbashで入る
