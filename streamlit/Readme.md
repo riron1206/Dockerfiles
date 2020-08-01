@@ -49,4 +49,5 @@ $ streamlit run src/my_test_coronavirus_trend.py
 ```bash
 $ docker run -p 8501:8501 -it -m 8g -v $PWD:/app --rm --entrypoint /bin/bash tomerlevi/streamlit-docker  # コンテナ起動してbashで入る
 $ streamlit run https://raw.githubusercontent.com/prs-watch/streamlit-sample/master/sample.py
+$ streamlit run https://github.com/riron1206/Dockerfiles/blob/master/streamlit/src/my_test_coronavirus_trend.py
 ```
