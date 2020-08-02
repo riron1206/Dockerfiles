@@ -48,6 +48,8 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 ## [DockerHub‚©‚çpycaretŠÂ‹«ì¬](/pycaret)
 
+## [DockerHub‚©‚çpycaret_v2ŠÂ‹«ì¬](/pycaret_v2)
+
 ## [docker-compose.yml‚ÅMeCabŠÂ‹«ì¬](/mecab)
 
 ## [docker-compose.yml‚ÅKaggle Kernelì¬](/kaggle_kernel_jupyter)
