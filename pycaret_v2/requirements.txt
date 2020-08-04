@@ -31,3 +31,4 @@ imbalanced-learn
 #awscli - removing it as its only needed for deploy_model() 
 #shap - removing shap as it's causing issues building Docker image. 
 pycaret==2.0
+papermill

@@ -1,6 +1,5 @@
-input
+examples
 notebook
-script
-old
-README.md
+.dockerignore
 .gitignore
+README.md
