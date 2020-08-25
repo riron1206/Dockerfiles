@@ -12,6 +12,10 @@ $ cd darts
 $ cd scripts ./build_docker.sh && ./run_docker.sh
 
 $ Ctrl + c でコンテナ停止
+
+$ docker ps -all
+$ docker stop <コンテナID>
+$ docker rm <コンテナID>
 ```
 
 <!-- 
