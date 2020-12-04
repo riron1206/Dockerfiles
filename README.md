@@ -8,7 +8,14 @@ Dockerfiles and docker-compose.yml sample command
 - dockerコマンドは必ずPowerShellから実行すること
 - 参考: https://karaage.hatenadiary.jp/entry/2019/05/17/073000
 
-## Docker Toolboxからインストールする場合（Windows 10 Pro じゃないとDocker for Windows使えないのでHome版だとこっち）
+## Docker for Windowsからインストールする場合（ubuntuでしか使えないDocker）
+- wsl 2 のubuntuダウンロード
+- Docker Desktop for Windows をインストール
+- 参考:
+	- 全体の手順: https://qiita.com/poramal/items/11912b5533ec8e7dbaac
+	- Dockerダウンロード後に必要な設定: https://qiita.com/mofumoffy223/items/4f749dc10bd56b72feb5
+
+## Docker Toolboxからインストールする場合
 - 参考: https://qiita.com/KIYS/items/8ac37f6757a6b7f84569
 	- VirturalBoxのメモリ8Gに変更すること
 		- 参考: https://qiita.com/niisan-tokyo/items/2d7d21aeb4e25f7a7bbe
