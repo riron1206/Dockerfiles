@@ -53,6 +53,8 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 ## [Dockerfile‚ÅdartsŠÂ‹«ì¬](/darts)
 
+## [Dockerfile‚Åcpu”ÅAzureML‚ÌŠÂ‹«ì¬](/azureml_cpu)
+
 ## [Dockerfile‚Åkaggle_gpuŠÂ‹«ì¬](/kaggle_gpu)
 
 ## [Dockerfile‚Åpytorch1.7.1_gpuŠÂ‹«ì¬](/sinpcw)
