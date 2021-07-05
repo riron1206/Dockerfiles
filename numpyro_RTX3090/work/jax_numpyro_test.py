@@ -1,8 +1,8 @@
 # jax test
 # https://zenn.dev/asei/articles/ee0525e452fdb3
 
-# Prevent GPU/TPU warning.
-#import jax; jax.config.update('jax_platform_name', 'cpu')  # これつけないとxlaが動いてエラーになる？みたい
+## Prevent GPU/TPU warning.
+#import jax; jax.config.update('jax_platform_name', 'cpu')
 
 # ====================================
 # NumPy 互換の行列演算
@@ -50,6 +50,10 @@ net_init, net_apply = stax.serial(
     Dense(10), LogSoftmax,
 )
 
+
+# GPUだとMCMC遅いのでcpu使う
+import numpyro
+numpyro.set_platform("cpu")
 
 # ====================================
 # 公式github の numpyro sample code

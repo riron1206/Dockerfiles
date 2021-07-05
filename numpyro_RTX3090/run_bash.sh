@@ -10,6 +10,7 @@ docker run -p 8888:8888 -p 8502:8502 -it -v $PWD/work:/work --rm --gpus all pyto
 ## [GpuDevice(id=0)]
 
 ## jax, numpyro動くか確認
+## GPUだとMCMC遅いのでcpu使うこと
 # python ./jax_numpyro_test.py
 
 ## jupyter 起動

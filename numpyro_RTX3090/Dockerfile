@@ -4,6 +4,8 @@
 # https://qiita.com/masamiic/items/bb2cc8f0f4d7bf68b520
 FROM sinpcw/pytorch:1.8.0
 
+USER root
+
 RUN pip install -U pip && \
     pip install jupyterlab && \
     pip install jupyter-contrib-nbextensions && \
@@ -30,5 +32,13 @@ RUN pip install -q numpyro@git+https://github.com/pyro-ppl/numpyro && \
 # scikit-learnやseaborn入れる用
 RUN pip install tensorflow-gpu==2.4.1 && \
     pip install pycaret==2.3.1
+
+# pydot・graphvizをインストール
+# https://qiita.com/dyokokawa6/items/2c42581fcbf1fa61ae46
+RUN pip install pydotplus
+RUN apt-get update -y
+RUN apt-get install -y graphviz
+RUN pip install graphviz
+
 
 WORKDIR /work
