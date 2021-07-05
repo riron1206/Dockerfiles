@@ -23,7 +23,6 @@ RUN pip install --upgrade pip
 RUN pip install --upgrade "jax[cuda111]" -f https://storage.googleapis.com/jax-releases/jax_releases.html
 
 # pip install -q ならgpu認識してくれる
-# jax upgrade しなくてimportもいけたが、ソースで入れた時と同様にcpuで動くコードがjaxのエラーで失敗する
 # https://forum.pyro.ai/t/gpu-on-colab/2155/7
 RUN pip install -q numpyro@git+https://github.com/pyro-ppl/numpyro && \
     pip install arviz
