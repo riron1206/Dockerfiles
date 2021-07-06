@@ -59,6 +59,8 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 ## [Dockerfile‚Åpytorch1.7.1_gpuŠÂ‹«ì¬](/sinpcw)
 
+## [Dockerfile‚Ånumpyro_RTX3090ŠÂ‹«ì¬](/numpyro_RTX3090)
+
 ## [DockerHub‚©‚çpysparkŠÂ‹«ì¬](/pyspark)
 
 ## [DockerHub‚©‚çpycaretŠÂ‹«ì¬](/pycaret)
