@@ -61,6 +61,8 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 ## [Dockerfile‚Ånumpyro_RTX3090ŠÂ‹«ì¬](/numpyro_RTX3090)
 
+## [Dockerfile‚Åmmdetectionv2140ŠÂ‹«ì¬](/mmdetectionv2140)
+
 ## [DockerHub‚©‚çpysparkŠÂ‹«ì¬](/pyspark)
 
 ## [DockerHub‚©‚çpycaretŠÂ‹«ì¬](/pycaret)
