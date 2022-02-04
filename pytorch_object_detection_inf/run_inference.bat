@@ -1,4 +1,4 @@
-call C:\Users\yokoi.shingo\Miniconda3\Scripts\activate.bat
+call C:\Users\<user>\Miniconda3\Scripts\activate.bat
 call activate detection
 
 rem # GPU使える場合（画像1枚推論するのに3秒程度かかる）
