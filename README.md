@@ -1,6 +1,9 @@
 # Dockerfiles
 Dockerfiles and docker-compose.yml sample command
 
+## 非常に良くまとめられたdockerの使い方ドキュメント
+- https://zenn.dev/a1008u/books/6bf96a769bedb2be53ae
+
 ## Docker setup (Windows10)
 - 参考: https://qiita.com/ksh-fthr/items/6b1242c010fac7395a45
 
@@ -8,7 +11,14 @@ Dockerfiles and docker-compose.yml sample command
 - dockerコマンドは必ずPowerShellから実行すること
 - 参考: https://karaage.hatenadiary.jp/entry/2019/05/17/073000
 
-## Docker for Windowsからインストールする場合（ubuntuでしか使えないDocker）
+
+## Rancher Desktopからインストールする場合（Windows10）
+- ※Rancher Desktop: Kubernetesコンテナ管理ツール。無料で使えるDocker for Windowsの理解
+- https://zenn.dev/rhene/articles/rancher-desktop-for-windows-with-wsl2
+
+
+## Docker for Windowsからインストールする場合
+
 - wsl 2 のubuntuダウンロード
 - Docker Desktop for Windows をインストール
 - 参考:
@@ -63,6 +73,8 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 
 ## [Dockerfileでmmdetectionv2140環境作成](/mmdetectionv2140)
 
+## [Dockerfileで物体検出モデル推論環境作成](/pytorch_object_detection_inf)
+
 ## [DockerHubからpyspark環境作成](/pyspark)
 
 ## [DockerHubからpycaret環境作成](/pycaret)
@@ -72,6 +84,8 @@ $ docker run -p 8888:8888 -it --rm --name ds jupyter/datascience-notebook
 ## [docker-compose.ymlでMeCab環境作成](/mecab)
 
 ## [docker-compose.ymlでKaggle Kernel作成](/kaggle_kernel_jupyter)
+
+## [docker-compose.ymlでpytorchのモデル推論とlabel-studio（アノテーションツール）起動する作成例](/pytorch_label_studio)
 
 ## よく使うdockerコマンド
 ```bash

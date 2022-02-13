@@ -1,0 +1,35 @@
+version: '3'
+services:
+  # 検出モデル
+  model:
+    build: .
+    container_name: detection.fastrcnn_resnet
+    volumes:
+      - ./:/workspace
+    entrypoint: /bin/bash
+    tty: true
+    # GPUで実行する場合（画像1枚推論するのに3秒程度かかる）
+    command: -c "python ./model/FastRCNN_resnet152_inference.py -i ./test_images -o ./output -m /workspace/model/FastRCNN_resnet152_ex002 --is_not_put_text"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+  # アノテーションツール:label-studio. 8080ポートが空いてない場合やアノテーションツールが不要な場合は以下を「#」でコメントアウトしてください
+  annotation:
+    image: heartexlabs/label-studio:latest
+    container_name: label-studio
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./label-studio:/label-studio/data
+      - ./:/label-studio/files
+    environment:
+      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
+      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/files
+
+# gpuでdocker-composeから推論実行
+# $ docker-compose -f docker-compose.yml up
+# docker-composeのコンテナとイメージ削除
+# $ docker-compose -f docker-compose.yml down --rmi all
