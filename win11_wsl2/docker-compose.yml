@@ -1,0 +1,49 @@
+version: '3'
+services:
+  # 検出モデル
+  model:
+    build: .
+    container_name: plaque_detection.fastrcnn_resnet
+    volumes:
+      - ./:/workspace
+    entrypoint: /bin/bash
+    tty: true
+    # CPUで実行する場合（画像1枚推論するのに1分以上かかります）
+    command: -c "python ./torch_check.py"
+    # アノテーションツール:label-studio. 8080ポートが空いてない場合やアノテーションツールが不要な場合は以下を「#」でコメントアウトしてください
+  annotation:
+    image: heartexlabs/label-studio:latest
+    container_name: label-studio
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./label-studio:/label-studio/data
+      - ./:/label-studio/files
+    environment:
+      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
+      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/files
+  # gpu版検出モデル
+  #model_gpu:
+  #  build: .
+  #  container_name: plaque_detection.fastrcnn_resnet.gpu
+  #  volumes:
+  #    - ./:/workspace
+  #  entrypoint: /bin/bash
+  #  tty: true
+  #  # GPUで実行する場合（画像1枚推論するのに3秒程度かかる）
+  #  command: -c "python ./torch_check.py"
+  #  deploy:
+  #    resources:
+  #      reservations:
+  #        devices:
+  #          - capabilities: [gpu]
+
+# cpuでdocker-composeから推論実行
+# $ docker-compose -f docker-compose.yml up model
+# アノテーションツールも起動
+# $ docker-compose -f docker-compose.yml up model annotation
+# gpuでdocker-composeから推論実行
+# $ docker-compose -f docker-compose.yml up model_gpu
+# docker-composeのコンテナとイメージ削除
+# $ docker-compose -f docker-compose.yml down --rmi all

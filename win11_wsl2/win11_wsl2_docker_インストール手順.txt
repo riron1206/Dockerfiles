@@ -1,0 +1,59 @@
+■自宅PC（Win11）でのwsl2 + docker install手順（2022/06/04実行）
+
+1. 設定→アプリからRancher desktop削除
+
+2. 設定→アプリからUbuntu削除orリセット
+
+3. コマンドプロンプト起動（コマンドプロンプトのコピペはCtrl + Shift + v。左上のメニューで左クリックしてプロパティからコピペのショートカットいじれる）
+wsl --unregister rancher-desktop-data
+wsl --unregister rancher-desktop
+※Ubuntu削除してたらUbuntuもunregisterして再インストール
+wsl --unregister Ubuntu
+wsl --install -d Ubuntu
+Ubuntuが起動するのでユーザ名とパスワード入れる
+PC再起動
+
+4. コマンドプロンプト起動してwsl入ってるか確認
+wsl -l -v
+※VERSION 2 ならwsl2
+
+5. コマンドプロンプト起動してDocker入れる
+※https://zenn.dev/sprout2000/articles/95b125e3359694 が参考になる
+wsl
+sudo apt update
+sudo apt upgrade -y
+sudo apt install curl -y
+sudo apt install apt-transport-https -y
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io -y
+sudo apt install docker-compose -y
+
+6. dockerグループにユーザ追加
+https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue
+wsl
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+（newgrp dockerが機能しない場合は、最初にマシンを再起動する必要があります）
+
+7. hello-world起動できるか確認
+wsl
+sudo service docker start
+docker run hello-world
+
+8. コマンドたたけるか確認
+wsl
+docker --version
+docker ps -a
+docker images
+docker-compose --version
+
+9. batからdocker-compose.yml実行できるか確認
+run_cpu_wsl.bat ダブルクリック
+
+
+
