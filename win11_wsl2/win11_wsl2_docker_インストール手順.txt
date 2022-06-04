@@ -60,5 +60,5 @@ https://zenn.dev/taiga533/articles/11f1b21ef4a5ff
 sudo visudo
 
 ユーザー名 ALL=NOPASSWD: /usr/sbin/service docker start, /usr/sbin/service docker stop, /usr/sbin/service docker restart
-を最終行に追加（ctrl+s,ctral+x）
+を最終行に追加（ctrl+s,ctrl+x）
 
