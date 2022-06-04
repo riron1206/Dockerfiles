@@ -55,5 +55,10 @@ docker-compose --version
 9. batからdocker-compose.yml実行できるか確認
 run_cpu_wsl.bat ダブルクリック
 
+10. sudo service docker startでパスワード聞かれないようにする
+https://zenn.dev/taiga533/articles/11f1b21ef4a5ff
+sudo visudo
 
+ユーザー名 ALL=NOPASSWD: /usr/sbin/service docker start, /usr/sbin/service docker stop, /usr/sbin/service docker restart
+を最終行に追加（ctrl+s,ctral+x）
 
