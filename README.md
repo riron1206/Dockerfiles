@@ -110,6 +110,23 @@ $ docker-compose restart        # docker-composeで起動中のコンテナを再起動
 $ docker-compose rm             # docker-composeで停止中のコンテナを削除
 ```
 
+## docker hubにimage登録
+```bash
+# 1. Docker Hubにログイン
+$ docker login
+
+# 2. upする [IMAGE ID] 確認
+$ docker images
+
+# 3. Docker Hub登録用のリポジトリ名とタグを付けたDockerイメージを別に作成
+# $ docker tag [IMAGE ID] [自分のDockerID]/[Dockerイメージ名]:[タグ]
+$ docker tag *** anonamename/xxx:latest
+
+# 4. Docker Hubに登録（push）
+# $ docker push [自分のDockerID]/[Dockerイメージ名]:[タグ]
+$ docker push anonamename/xxx:latest
+```
+
 <!-- 
 ## License
 This software is released under the MIT License, see LICENSE.
