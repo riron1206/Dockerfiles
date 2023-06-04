@@ -108,7 +108,7 @@ $ docker rm $(docker ps -a -q)          # 起動中の全てのコンテナの削除 ※docker 
 
 ## よく使うdocker-composeのコマンド
 
-- Compose V2 からは?`docker-compose`?コマンドが?`docker compose`?になっている
+- Compose V2 からは `docker-compose` コマンドが `docker compose` になっているので注意
 
 ```bash
 $ docker-compose version        # docker-composeのバージョンを表示
@@ -118,6 +118,23 @@ $ docker-compose up             # docker-composeでイメージからコンテナを起動。-d
 $ docker-compose kill           # docker-composeで起動中のコンテナを強制停止
 $ docker-compose restart        # docker-composeで起動中のコンテナを再起動
 $ docker-compose rm             # docker-composeで停止中のコンテナを削除
+```
+
+## docker hubにimage登録
+```bash
+# 1. Docker Hubにログイン
+$ docker login
+
+# 2. upする [IMAGE ID] 確認
+$ docker images
+
+# 3. Docker Hub登録用のリポジトリ名とタグを付けたDockerイメージを別に作成
+# $ docker tag [IMAGE ID] [自分のDockerID]/[Dockerイメージ名]:[タグ]
+$ docker tag *** anonamename/xxx:latest
+
+# 4. Docker Hubに登録（push）
+# $ docker push [自分のDockerID]/[Dockerイメージ名]:[タグ]
+$ docker push anonamename/xxx:latest
 ```
 
 <!-- 
