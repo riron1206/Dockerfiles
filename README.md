@@ -121,6 +121,7 @@ $ docker-compose rm             # docker-composeで停止中のコンテナを削除
 ```
 
 ## docker hubにimage登録
+
 ```bash
 # 1. Docker Hubにログイン
 $ docker login
@@ -141,6 +142,18 @@ $ docker push anonamename/xxx:latest
 ## License
 This software is released under the MIT License, see LICENSE.
 -->
+
+## 作成したdockerイメージを人に渡す方法
+
+[Dockerで構築する機械学習環境【2024年版】](https://zenn.dev/mkj/articles/33befbaf38c693)
+
+```bash
+# ubuntu-testイメージを保存。test.tar.gzが作られる
+$ docker save ubuntu-test | gzip > test.tar.gz
+
+# test.tar.gzを使ってubuntu-testイメージを作成
+$ docker load < test.tar.gz
+```
 
 ## Author
 
